@@ -22,7 +22,7 @@ shinyServer(
       paste("你要在", input$start,"點到",input$end,"點去唱歌~")
     })
     output$text4 <- renderText({
-      a <-paste("你有",input$checkGroup,"耶！")
+      a <-paste("你有",input$discount,"耶！")
       paste(a,"阿不就好棒棒？")
     })
   }

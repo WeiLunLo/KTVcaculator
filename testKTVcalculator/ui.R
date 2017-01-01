@@ -35,11 +35,10 @@ shinyUI(fluidPage(
                    choices = c(0:23),
                    selected = 0),
 
-      checkboxGroupInput("checkGroup", 
-                         label = h3("我有"), 
-                         choices = c("學生證" , 
-                                     "威力卡" ),
-                         selected = 0)
+  
+      radioButtons("discount", label = h3("我有"),
+                   choices = list("學生證", "威力卡"),
+                   selected = 1)
     ),
     
     mainPanel(
