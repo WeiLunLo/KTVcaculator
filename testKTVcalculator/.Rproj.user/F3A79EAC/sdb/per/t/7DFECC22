@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nsource(\"global.R\")\n\nshinyUI(fluidPage(\n  titlePanel(\"KTV計算機-測試版\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      helpText(\"請輸入唱歌資訊：\"),\n      \n      selectInput(\"weekday\", \n                  label = \"禮拜幾？\",\n                  choices = c(\"禮拜一\"=1, \"禮拜二\"=2,\"禮拜三\"=3, \"禮拜四\"=4, \"禮拜五\"=5, \"禮拜六\"=6, \"禮拜天\"=7),\n                  selected = 7),\n      \n      sliderInput(\"range\", \n                  label = \"人數？\",\n                  min = 1, max = 20, value = 1),\n      \n      helpText(\"若人數超過20人請選20人，並建議聯絡客服人員詢問詳細收費方式\"),\n\n      selectInput(\"start\", \n                   label = \"從\", \n                   choices = c(0:23),\n                  selected = 0),\n      \n      selectInput(\"end\", \n                   label = \"到\", \n                   choices = c(0:23),\n                   selected = 0),\n\n  \n      radioButtons(\"discount\", label = h3(\"我有\"),\n                   choices = list(\"學生證\", \"威力卡\"),\n                   selected = 1)\n    ),\n    \n      actionButton(\"action\", \"Go\")\n  ),\n\n    mainPanel(\n      textOutput(\"text1\"),\n      textOutput(\"text2\"),\n      textOutput(\"text3\"),\n      textOutput(\"text4\"),\n      tableOutput(\"text5\")\n    )\n  \n  ))",
+    "created" : 1483272685586.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1325473072",
+    "id" : "7DFECC22",
+    "lastKnownWriteTime" : 1483278466,
+    "last_content_update" : 1483278466819,
+    "path" : "D:/allen/ntu/105/Group3/KTVcaculator/testKTVcalculator/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

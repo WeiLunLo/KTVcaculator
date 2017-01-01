@@ -6,6 +6,7 @@
 #
 
 library(shiny)
+source("global.R")
 
 shinyUI(fluidPage(
   titlePanel("KTV計算機-測試版"),
@@ -17,7 +18,7 @@ shinyUI(fluidPage(
       selectInput("weekday", 
                   label = "禮拜幾？",
                   choices = c("禮拜一"=1, "禮拜二"=2,"禮拜三"=3, "禮拜四"=4, "禮拜五"=5, "禮拜六"=6, "禮拜天"=7),
-                  selected = "禮拜一"),
+                  selected = 7),
       
       sliderInput("range", 
                   label = "人數？",
@@ -41,11 +42,15 @@ shinyUI(fluidPage(
                    selected = 1)
     ),
     
+      actionButton("action", "Go")
+  ),
+
     mainPanel(
       textOutput("text1"),
       textOutput("text2"),
       textOutput("text3"),
-      textOutput("text4")
+      textOutput("text4"),
+      tableOutput("text5")
     )
-  )
+  
   ))
