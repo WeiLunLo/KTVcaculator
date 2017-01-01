@@ -8,10 +8,10 @@
 library(shiny)
 source("global.R")
 
-shinyUI(fluidPage(
-  titlePanel("KTV計算機-測試版"),
+shinyUI(
+  fluidPage(theme = "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/bootstrap.css",
+    titlePanel("KTV計算機-測試版"),
   
-  sidebarLayout(
     sidebarPanel(
       helpText("請輸入唱歌資訊："),
       
@@ -39,18 +39,18 @@ shinyUI(fluidPage(
   
       radioButtons("discount", label = h3("我有"),
                    choices = list("學生證", "威力卡"),
-                   selected = 1)
-    ),
+                   selected = 1),
+    
     
       actionButton("action", "Go")
   ),
 
     mainPanel(
+      textOutput("text5"),
       textOutput("text1"),
       textOutput("text2"),
       textOutput("text3"),
-      textOutput("text4"),
-      tableOutput("text5")
+      textOutput("text4")
     )
   
   ))

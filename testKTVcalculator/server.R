@@ -11,22 +11,23 @@ source("global.R")
 shinyServer(
   function(input, output) {
     
-    output$text5 <- renderTable({
-    if (input$weekday == 7){
-      data <- boxSun
-    }  else if (input$weekday == 5){
-      data <- boxFri
-    } else if (input$weekday == 6){
-      data <- boxSat
-    } else {
-      data <- boxMTWT
-    }
-      data[,21]
+    output$text5 <- renderText({
+      if (input$weekday == 7){
+        data <- boxSun
+      }  else if (input$weekday == 5){
+        data <- boxFri
+      } else if (input$weekday == 6){
+        data <- boxSat
+      } else {
+        data <- boxMTWT
+      }
+      data[1,21]
     })
+    
+    
     output$text1 <- renderText({ 
       paste("你選擇禮拜", input$weekday,"去唱歌~")
     })
-    
     output$text2 <- renderText({
       a <- input$range - 1
       paste("你要跟", a,"個小夥伴去唱歌~")
