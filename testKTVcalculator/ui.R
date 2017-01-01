@@ -9,7 +9,7 @@ library(shiny)
 source("global.R")
 
 shinyUI(
-  fluidPage(theme = "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/bootstrap.css",
+  fluidPage(theme = "bootstrap.css",
     titlePanel("KTV計算機-測試版"),
   
     sidebarPanel(
@@ -46,7 +46,7 @@ shinyUI(
   ),
 
     mainPanel(
-      textOutput("text5"),
+      tableOutput("text5"),
       textOutput("text1"),
       textOutput("text2"),
       textOutput("text3"),
