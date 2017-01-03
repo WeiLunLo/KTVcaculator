@@ -1,8 +1,7 @@
 library(shiny)
 source("global.R")
 
-shinyUI(
-  fluidPage(titlePanel("KTV計算機-測試版"),
+shinyUI(fluidPage(titlePanel("KTV計算機-測試版"),
   
     sidebarPanel(
       helpText("請輸入唱歌資訊："),
@@ -29,12 +28,9 @@ shinyUI(
                    selected = 0),
 
   
-      radioButtons("discount", label = h3("我有"),
+      radioButtons("discount", label = "我有",
                    choices = list("學生證", "威力卡"),
-                   selected = 1),
-    
-    
-      actionButton("action", "Go")
+                   selected = 1)
   ),
 
     mainPanel(
