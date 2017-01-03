@@ -1,12 +1,5 @@
-
-# This is the server logic for a Shiny web application.
-# You can find out more about building applications with Shiny here:
-#
-# http://shiny.rstudio.com
-#
-
 library(shiny)
-library(dplyr)
+require(dplyr)
 source("global.R")
 
 shinyServer(
@@ -50,14 +43,11 @@ shinyServer(
       for (i in 1:ncol(boxprice))
       {
         boxprice = boxprice[ !is.na(boxprice[,i]),] 
-        colnames(boxprice)[2] <- "分店"
+        colnames(boxprice)[2] <- "branch"
       }
       
       if (start < end){
         timeprice = data[,start:end]
-        
-        #timesum = mutate()
-        
         timeprice = cbind(data[,1],timeprice,data[,34:36])
         for (j in 1:ncol(timeprice)) {
           timeprice = timeprice [ !is.na(timeprice[,j]),]
@@ -76,8 +66,8 @@ shinyServer(
         timeprice = na.omit(timeprice)
           }
         
-      colnames(timeprice)[1] <- "分店"
-      a <- inner_join(boxprice, timeprice, by = "分店")
+      colnames(timeprice)[1] <- "branch"
+      a <- inner_join(boxprice, timeprice, by = "branch")
       a <- a[,-3:-5]
       a
       
