@@ -39,22 +39,47 @@ shinyServer(
         boxprice = data[,9]
       }
       
+      
+      boxprice = cbind(boxprice, boxMTWT[,1],boxMTWT[,34:36])
+      
       start <- as.numeric(input$start)
       start <- start + 10
       end   <- as.numeric(input$end)
       end   <- end + 10
-
+    
+      for (i in 1:ncol(boxprice))
+      {
+        boxprice = boxprice[ !is.na(boxprice[,i]),] 
+        colnames(boxprice)[2] <- "分店"
+      }
       
-      if (start <= end){
+      if (start < end){
         timeprice = data[,start:end]
-      } else{
+        
+        #timesum = mutate()
+        
+        timeprice = cbind(data[,1],timeprice,data[,34:36])
+        for (j in 1:ncol(timeprice)) {
+          timeprice = timeprice [ !is.na(timeprice[,j]),]
+        }
+      } else if (start > end){
         temps = data[,start:33]
         tempe = data[,10:end]
         timeprice = cbind(temps,tempe)
-      }
-      
-     # for (i in 1 : length(boxprice))
-      timeprice
+        timeprice = cbind(data[,1],timeprice,data[,34:36])
+        for (j in 1:ncol(timeprice)){
+          timeprice = timeprice [ !is.na(timeprice[,j]),]
+        }
+      } else {
+        timeprice = data[,start]
+        timeprice = cbind(data[,1],timeprice,data[,34:36])
+        timeprice = na.omit(timeprice)
+          }
+        
+      colnames(timeprice)[1] <- "分店"
+      a <- inner_join(boxprice, timeprice, by = "分店")
+      a <- a[,-3:-5]
+      a
       
     })
     

@@ -9,7 +9,8 @@ library(shiny)
 source("global.R")
 
 shinyUI(
-  fluidPage(theme = "bootstrap.css",
+  fluidPage(
+    #theme = "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/www/bootstrap.css",
     titlePanel("KTV計算機-測試版"),
   
     sidebarPanel(

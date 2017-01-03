@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(dplyr)\nsource(\"global.R\")\n\nshinyServer(\n  function(input, output) {\n    \n    output$text5 <- renderTable({\n      if (input$weekday == 7){\n        data <- boxSun\n      } else if (input$weekday == 5){\n        data <- boxFri\n      } else if (input$weekday == 6){\n        data <- boxSat\n      } else {\n        data <- boxMTWT\n      }\n      \n      if (input$range == 1 | input$range == 2|input$range == 3){\n        boxprice = data[,2]\n      } else if (input$range == 4 |input$range ==5 | input$range ==6){\n        boxprice = data[,3]\n      } else if (input$range == 7 |input$range ==8 | input$range ==9){\n        boxprice = data[,4]\n      } else if (input$range == 10 |input$range ==11 | input$range ==12){\n        boxprice = data[,5]\n      } else if (input$range == 13 |input$range ==14 | input$range ==15){\n        boxprice = data[,6]\n      } else if (input$range == 16 |input$range ==17 | input$range ==18){\n        boxprice = data[,8]\n      } else {\n        boxprice = data[,9]\n      }\n      \n      \n      boxprice = cbind(boxprice, boxMTWT[,1],boxMTWT[,34:36])\n      \n      start <- as.numeric(input$start)\n      start <- start + 10\n      end   <- as.numeric(input$end)\n      end   <- end + 10\n    \n      for (i in 1:ncol(boxprice))\n      {\n        boxprice = boxprice[ !is.na(boxprice[,i]),] \n        colnames(boxprice)[2] <- \"分店\"\n      }\n      \n      if (start < end){\n        timeprice = data[,start:end]\n        \n        #timesum = mutate()\n        \n        timeprice = cbind(data[,1],timeprice,data[,34:36])\n        for (j in 1:ncol(timeprice)) {\n          timeprice = timeprice [ !is.na(timeprice[,j]),]\n        }\n      } else if (start > end){\n        temps = data[,start:33]\n        tempe = data[,10:end]\n        timeprice = cbind(temps,tempe)\n        timeprice = cbind(data[,1],timeprice,data[,34:36])\n        for (j in 1:ncol(timeprice)){\n          timeprice = timeprice [ !is.na(timeprice[,j]),]\n        }\n      } else {\n        timeprice = data[,start]\n        timeprice = cbind(data[,1],timeprice,data[,34:36])\n        timeprice = na.omit(timeprice)\n          }\n        \n      colnames(timeprice)[1] <- \"分店\"\n      a <- inner_join(boxprice, timeprice, by = \"分店\")\n      a <- a[,-3:-5]\n      a\n      \n    })\n    \n    \n    output$text1 <- renderText({ \n      paste(\"你選擇禮拜\", input$weekday,\"去唱歌~\")\n    })\n    output$text2 <- renderText({\n      a <- input$range - 1\n      paste(\"你要跟\", a,\"個小夥伴去唱歌~\")\n    })\n    output$text3 <- renderText({\n      paste(\"你要在\", input$start,\"點到\",input$end,\"點去唱歌~\")\n    })\n    output$text4 <- renderText({\n      a <-paste(\"你有\",input$discount,\"耶！\")\n      paste(a,\"阿不就好棒棒？\")\n    })\n  }\n)",
+    "created" : 1483260023655.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "86|32|88|4|\n89|32|92|4|\n93|32|95|4|\n96|32|99|4|\n",
+    "hash" : "3782359037",
+    "id" : "480E59A9",
+    "lastKnownWriteTime" : 1483427933,
+    "last_content_update" : 1483427933592,
+    "path" : "C:/Users/acer/Desktop/KTVcaculator/testKTVcalculator/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+        "source_window_id" : ""
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
