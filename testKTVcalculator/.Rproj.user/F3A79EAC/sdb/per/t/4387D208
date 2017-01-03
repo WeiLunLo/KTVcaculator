@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "MTWT <- \"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxMTWT.csv\"\nboxMTWT <- read.csv(MTWT,header = T, sep = \",\")\nFri <- \"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxFri.csv\"\nboxFri <- read.csv(Fri,header = T, sep = \",\")\nSat <- \"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxSat.csv\"\nboxSat <- read.csv(Sat,header = T, sep = \",\")\nSun <- \"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxSun.csv\"\nboxSun <- read.csv(Sun,header = T, sep = \",\")\n",
+    "created" : 1483261862984.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "866736891",
+    "id" : "4387D208",
+    "lastKnownWriteTime" : 1483463822,
+    "last_content_update" : 1483463822089,
+    "path" : "C:/Users/acer/Desktop/KTVcaculator/testKTVcalculator/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
