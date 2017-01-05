@@ -35,10 +35,11 @@ shinyUI(fluidPage(titlePanel("KTV計算機-測試版"),
 
     mainPanel(
       tableOutput("text5"),
-      textOutput("text1"),
-      textOutput("text2"),
-      textOutput("text3"),
-      textOutput("text4")
+      div("*每人平均(一般)：含餐飲基本消費100元與10%總金額之服務費",style = "color:grey"),
+      div("*每人平均(歡樂吧)：含歡樂吧158元與10%總金額之服務費",style = "color:grey"),
+      br(),
+      h2("目前資料與計價方式：僅好樂迪之包廂",style = "color:red"),
+      img(src="https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg")
     )
   
   ))
