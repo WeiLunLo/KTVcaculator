@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "library(shiny)\nsource(\"global.R\")\n\nshinyUI(fluidPage(titlePanel(\"KTV計算機-測試版\"),\n  \n    sidebarPanel(\n      helpText(\"請輸入唱歌資訊：\"),\n      \n      selectInput(\"weekday\", \n                  label = \"禮拜幾？\",\n                  choices = c(\"禮拜一\"=1, \"禮拜二\"=2,\"禮拜三\"=3, \"禮拜四\"=4, \"禮拜五\"=5, \"禮拜六\"=6, \"禮拜天\"=7),\n                  selected = 7),\n      \n      sliderInput(\"range\", \n                  label = \"人數？\",\n                  min = 1, max = 20, value = 1),\n      \n      helpText(\"若人數超過20人請選20人，並建議聯絡客服人員詢問詳細收費方式\"),\n\n      selectInput(\"start\", \n                   label = \"開始時間：\", \n                   choices = c(0:23),\n                  selected = 0),\n      \n      selectInput(\"end\", \n                   label = \"結束時間：\", \n                   choices = c(0:23),\n                   selected = 0),\n      helpText(\"24小時制，若開始時間大於等於結束時間則跨過一天。例：0→0 = 今天半夜唱到明天半夜；\n               23->2 = 今天晚上11點唱到明天凌晨2點\"),\n  \n      radioButtons(\"discount\", label = \"我有\",\n                   choices = list(\"學生證\", \"威力卡\"),\n                   selected = 1)\n  ),\n\n    mainPanel(\n      tableOutput(\"text5\"),\n      div(\"*每人平均(一般)：含餐飲基本消費100元與10%總金額之服務費\",style = \"color:grey\"),\n      div(\"*每人平均(歡樂吧)：含歡樂吧158元與10%總金額之服務費\",style = \"color:grey\"),\n      br(),\n      h2(\"目前資料與計價方式：僅好樂迪之包廂\",style = \"color:red\"),\n      img(src=\"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg\")\n    )\n  \n  ))",
+    "contents" : "library(shiny)\nsource(\"global.R\")\n\nshinyUI(fluidPage(titlePanel(\"KTV計算機-測試版\"),\n  \n    sidebarPanel(\n      helpText(\"請輸入唱歌資訊：\"),\n      \n      selectInput(\"weekday\", \n                  label = \"唱歌的日子？\",\n                  choices = c(\"禮拜一\"=1, \"禮拜二\"=2,\"禮拜三\"=3, \"禮拜四\"=4, \"禮拜五\"=5, \"禮拜六\"=6, \"禮拜天\"=7),\n                  selected = 7),\n      \n      sliderInput(\"range\", \n                  label = \"人數？\",\n                  min = 1, max = 20, value = 7),\n      \n      helpText(\"若人數超過20人請選20人，並建議聯絡客服人員詢問詳細收費方式\"),\n\n      selectInput(\"start\", \n                   label = \"開始時間：\", \n                   choices = c(0:23),\n                  selected = 0),\n      \n      selectInput(\"end\", \n                   label = \"結束時間：\", \n                   choices = c(0:23),\n                   selected = 0),\n      helpText(\"24小時制，若『開始時間大於等於結束時間』則跨過一天。例：0→0 = 今天半夜唱到明天半夜；\n               23->2 = 今天晚上11點唱到明天凌晨2點\"),\n  \n      checkboxGroupInput(\"discount\", label = \"等等！我有：(請至少選一項喔！)\",\n                   choices = list(\"一副好歌喉\" = 1,\"學生證\" = 2, \"威力卡\" = 3, \"晶鑽卡\" = 4),\n                   selected = 1)\n  ),\n\n    mainPanel(\n      h2(\"超級比一比\"),\n      tableOutput(\"box\"),\n      div(\"*每人平均(元)：含餐飲最低基本消費與10%總金額之服務費。若要升級其他方案請上各KTV網站查詢詳情。\",style = \"color:grey\"),\n      p(\"*建議包廂類型對照表：(製作中)\"),\n      br(),\n      h2(\"目前資料與計價方式：三家之包廂\",style = \"color:red\"),\n      img(src=\"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg\")\n    )\n  \n  ))",
     "created" : 1483272685586.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3736505338",
+    "hash" : "1737133112",
     "id" : "7DFECC22",
-    "lastKnownWriteTime" : 1483674718,
-    "last_content_update" : 1483674718162,
+    "lastKnownWriteTime" : 1483724154,
+    "last_content_update" : 1483724154139,
     "path" : "C:/Users/acer/Desktop/KTVcaculator/testKTVcalculator/ui.R",
     "project_path" : "ui.R",
     "properties" : {
