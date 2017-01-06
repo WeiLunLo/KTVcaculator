@@ -18,15 +18,16 @@ shinyUI(fluidPage(titlePanel("KTV計算機-測試版"),
       helpText("若人數超過20人請選20人，並建議聯絡客服人員詢問詳細收費方式"),
 
       selectInput("start", 
-                   label = "從", 
+                   label = "開始時間：", 
                    choices = c(0:23),
                   selected = 0),
       
       selectInput("end", 
-                   label = "到", 
+                   label = "結束時間：", 
                    choices = c(0:23),
                    selected = 0),
-
+      helpText("24小時制，若開始時間大於等於結束時間則跨過一天。例：0→0 = 今天半夜唱到明天半夜；
+               23->2 = 今天晚上11點唱到明天凌晨2點"),
   
       radioButtons("discount", label = "我有",
                    choices = list("學生證", "威力卡"),
