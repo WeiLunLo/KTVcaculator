@@ -43,12 +43,12 @@ shinyUI(
       h2("超級比一比"),
       tableOutput("box"),
       div("*每人平均(元)：含餐飲最低基本消費與10%總金額之服務費。若要升級其他方案請上各KTV網站查詢詳情。",style = "color:grey"),
-      p("*建議包廂類型對照表：(製作中)"),
+      p("*建議包廂類型與人數對照表："),
+      tableOutput("boxname"),
       br(),
-      h2("目前資料與計價方式：三家之包廂",style = "color:red"),
-      img(src="https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg")
+      h2("目前資料與計價方式：三家之包廂",style = "color:red")
     )
   )),
-  tabPanel("1"),
-  tabPanel("2")
+  tabPanel("小柴",
+           img(src="https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg"))
   ))

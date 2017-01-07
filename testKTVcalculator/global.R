@@ -1,5 +1,9 @@
 library(dplyr)
 library(shinythemes)
+
+boxN <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxname.csv"
+boxName <- read.csv(boxN,header = T, sep = ",",fileEncoding='big5')
+
 MTWT <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxMTWT.CSV"
 boxMTWT <- read.csv(MTWT,header = T, sep = ",",fileEncoding='big5')
 Fri <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxFri.CSV"

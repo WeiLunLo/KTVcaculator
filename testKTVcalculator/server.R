@@ -140,6 +140,8 @@ shinyServer(
       finaltable
       
     })
-      
+      output$boxname <- renderTable({
+        boxName
+      })
   }
 )
