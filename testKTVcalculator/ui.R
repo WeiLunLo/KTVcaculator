@@ -1,7 +1,12 @@
 library(shiny)
 source("global.R")
 
-shinyUI(fluidPage(titlePanel("KTV計算機-測試版"),
+shinyUI(
+  navbarPage(theme = shinytheme("darkly"),
+    "KTV",
+    tabPanel("KTV Calculator",
+  fluidPage(
+            titlePanel("KTV計算機-測試版"),
   
     sidebarPanel(
       helpText("請輸入唱歌資訊："),
@@ -43,5 +48,7 @@ shinyUI(fluidPage(titlePanel("KTV計算機-測試版"),
       h2("目前資料與計價方式：三家之包廂",style = "color:red"),
       img(src="https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.jpg")
     )
-  
+  )),
+  tabPanel("1"),
+  tabPanel("2")
   ))
