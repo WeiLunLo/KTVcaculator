@@ -70,8 +70,8 @@ shinyUI(
                selectInput("KTV", 
                            label = "KTV店家",
                            choices = c("全部"=1, "好樂迪"=2,"錢櫃"=3, "星聚點"=4),
-                           selected = 1)
-           # img(src = "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.png",align = "center" ,style = "border-radius:100px" )
+                           selected = 1),
+           img(src = "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.png", height = 300,width=250)
              ),
              mainPanel(
                h2("店家基本資訊",style = "color:	#0072E3	"),
