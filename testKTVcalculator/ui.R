@@ -47,6 +47,7 @@ shinyUI(
           h2("包廂式計費",style = "color:	#0072E3	"),
           div(tableOutput("box"), style = "background-color:#303030; border-radius:5px"),
           div("*每人平均(元)：含餐飲最低基本消費與10%總金額之服務費。若要升級其他方案請洽KTV查詢詳情。",style = "color:#00DDFF"),
+          div("*此表僅供參考，詳細方案與最新資訊請洽各KTV。",style = "color:#00DDFF"),
           div("*建議包廂類型：請參考下對照表。",style = "color:#00DDFF"),
           br(),
           h4("建議包廂類型與人數對照表：",style = "color:	#0072E3	"),
@@ -57,7 +58,8 @@ shinyUI(
           div(tableOutput("head"), style = "background-color:#303030; border-radius:5px"),
           div("*每人價格：",span("『為該方案之每人價格』",style = "color:	#FF5D38	"),"，含餐飲最低基本消費與10%總金額之服務費。",style = "color:#00DDFF"),
           div("*續唱價格(每小時)：每小時的續唱價格，若欲續唱需另加10%服務費。(1)若該欄位為「0」則可歡唱至打烊，且該列之歡唱時數為入場時段開始至打烊時間。
-              (2)若該欄位為「X」，則不開放續唱。詳細方案與規則請洽各KTV。",style = "color:#00DDFF")
+              (2)若該欄位為「X」，則不開放續唱。(3)若該欄位為「C」，建議洽詢分店相關續唱事宜。",style = "color:#00DDFF"),
+          div("*此表僅供參考，詳細方案與最新資訊請洽各KTV。",style = "color:#00DDFF")
          )
       )
   ))

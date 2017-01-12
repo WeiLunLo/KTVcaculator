@@ -59,10 +59,12 @@ shinyServer(
         timeprice = data[,start:end]
         timeprice$trsum <- rowSums(timeprice)
         timeprice = cbind(boxprice,timeprice,data[,34:36])
+        interval <- end-start
         for (j in 1:ncol(timeprice)) {
           timeprice = timeprice [ !is.na(timeprice[,j]),]
         }
       } else if (start > end){
+        interval <- start - end
         temps = data[,start:33]
         temps = as.data.frame(temps)
         tempe = data[,10:end] 
@@ -74,6 +76,7 @@ shinyServer(
           timeprice = timeprice [ !is.na(timeprice[,j]),]
         }
       } else {
+        interval <- 1
         timeprice = data[,10:33]
         timeprice$trsum <- rowSums(timeprice)
         timeprice = as.data.frame(timeprice)%>%
@@ -83,7 +86,7 @@ shinyServer(
       }
       #calculation
     
-      temptable <- mutate(timeprice, boxtotal = boxprice*trsum) 
+      temptable <- mutate(timeprice, boxtotal = boxprice*trsum*interval) 
       temptable <- mutate(temptable, boxavg = boxtotal/input$range)
       temptable$whichbox <- boxn
       ktv <- as.data.frame(temptable$store)
