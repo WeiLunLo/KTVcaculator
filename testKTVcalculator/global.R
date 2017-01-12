@@ -14,21 +14,21 @@ Sun <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/boxSun.CSV"
 boxSun <- read.csv(Sun,header = T, sep = ",",fileEncoding='big5')
 
 hMTWT <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headMTWTAll.csv"
-headMTWT <- read.csv(hMTWT,header = T, sep = ",",fileEncoding='big5')
+headMTWTAll <- read.csv(hMTWT,header = T, sep = ",",fileEncoding='big5')
 hMTWTs <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headMTWTStud.csv"
-headMTWTS <- read.csv(hMTWTs,header = T, sep = ",",fileEncoding='big5')
+headMTWTStud <- read.csv(hMTWTs,header = T, sep = ",",fileEncoding='big5')
 
 hFri <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headFriAll.csv"
-headFri <- read.csv(hFri,header = T, sep = ",",fileEncoding='big5')
+headFriAll <- read.csv(hFri,header = T, sep = ",",fileEncoding='big5')
 hFris <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headFriStud.csv"
-headFriS <- read.csv(hFris,header = T, sep = ",",fileEncoding='big5')
+headFriStud <- read.csv(hFris,header = T, sep = ",",fileEncoding='big5')
 
 hSat <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headSatAll.csv"
-headSat <- read.csv(hSat,header = T, sep = ",",fileEncoding='big5')
+headSatAll <- read.csv(hSat,header = T, sep = ",",fileEncoding='big5')
 hSats <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headSatStud.csv"
-headSats <- read.csv(hSats,header = T, sep = ",",fileEncoding='big5')
+headSatStud <- read.csv(hSats,header = T, sep = ",",fileEncoding='big5')
 
 hSun <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headSunAll.csv"
-headSun <- read.csv(hSun,header = T, sep = ",",fileEncoding='big5')
+headSunAll <- read.csv(hSun,header = T, sep = ",",fileEncoding='big5')
 hSuns <- "https://weilunlo.github.io/KTVcaculator/testKTVcalculator/headSunStud.csv"
-headSuns <- read.csv(hSuns,header = T, sep = ",",fileEncoding='big5')
+headSunStud <- read.csv(hSuns,header = T, sep = ",",fileEncoding='big5')

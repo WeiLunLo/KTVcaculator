@@ -159,23 +159,23 @@ shinyServer(
         
         if (grepl(2,dd)==T){
           if (input$weekday == 7){
-            datah <- headSunS
+            datah <- headSunStud
           } else if (input$weekday == 5){
-            datah <- headFriS
+            datah <- headFriStud
           } else if (input$weekday == 6){
-            datah <- headSatS
+            datah <- headSatStud
           } else {
-            datah <- headMTWTS
+            datah <- headMTWTStud
           }
         }else {
           if (input$weekday == 7){
-            datah <- headSun
+            datah <- headSunAll
           } else if (input$weekday == 5){
-            datah <- headFri
+            datah <- headFriAll
           } else if (input$weekday == 6){
-            datah <- headSat
+            datah <- headSatAll
           } else {
-            datah <- headMTWT
+            datah <- headMTWTAll
           }
         }
         starth <- as.numeric(input$start)
