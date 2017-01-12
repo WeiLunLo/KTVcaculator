@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nsource(\"global.R\")\n\nshinyUI(\n  navbarPage(theme = shinytheme(\"darkly\"),\n    \"KTV\",\n    tabPanel(\"KTV Calculator\",\n  fluidPage(\n            titlePanel(\"KTV Calculator\"),\n  \n    sidebarPanel(\n      h4(\"請輸入唱歌資訊：\",style = \"color:\t#0072E3\t\"),\n      \n      selectInput(\"weekday\", \n                  label = \"唱歌的日子？\",\n                  choices = c(\"禮拜一\"=1, \"禮拜二\"=2,\"禮拜三\"=3, \"禮拜四\"=4, \"禮拜五\"=5, \"禮拜六\"=6, \"禮拜天\"=7),\n                  selected = 5),\n      helpText(\"國定假日請選禮拜天。\",style = \"color:\t#02F78E\t\"),\n      \n      sliderInput(\"range\", \n                  label = \"人數？\",\n                  min = 1, max = 20, value = 7),\n      \n      helpText(\"若人數超過20人請選20人，並建議聯絡客服人員詢問詳細收費方式\",style = \"color:\t#02F78E\t\"),\n\n      selectInput(\"start\", \n                   label = \"開始時間：\", \n                   choices = c(0:23),\n                  selected = 13),\n      \n      selectInput(\"end\", \n                   label = \"結束時間：\", \n                   choices = c(0:23),\n                   selected = 17),\n      helpText(\"24小時制，若『開始時間大於等於結束時間』則跨過一天。例：0→0 = 今天半夜唱到明天半夜；\n               23->2 = 今天晚上11點唱到明天凌晨2點\",style = \"color:\t#02F78E\t\"),\n  \n      checkboxGroupInput(\"discount\", label = \"等等！我有：\",\n                   choices = list(\"一副好歌喉\" = 1,\"學生證\" = 2, \"好樂迪威力卡\" = 3, \"錢櫃PARTY卡\" = 4),\n                   selected = 1),\n      helpText(\"↑↑↑ 請至少勾選一項喔！ ↑↑↑\",style = \"color:#FFB338\t\")\n  ),\n\n    mainPanel(\n      tabsetPanel(\n        tabPanel(\"BOX\",\n          h2(\"包廂式計費\",style = \"color:\t#0072E3\t\"),\n          div(tableOutput(\"box\"), style = \"background-color:#303030; border-radius:5px\"),\n          div(\"*每人平均(元)：含餐飲最低基本消費與10%總金額之服務費。若要升級其他方案請洽KTV查詢詳情。\",style = \"color:#00DDFF\"),\n          div(\"*此表僅供參考，詳細方案與最新資訊請洽各KTV。\",style = \"color:#00DDFF\"),\n          div(\"*建議包廂類型：請參考下對照表。\",style = \"color:#00DDFF\"),\n          br(),\n          h4(\"建議包廂類型與人數對照表：\",style = \"color:\t#0072E3\t\"),\n          div(tableOutput(\"boxname\"), style = \"background-color:#303030; border-radius:5px\")\n        ),\n        tabPanel(\"HEAD\",\n          h2(\"人頭式計費\",style = \"color:\t#0072E3\t\"),\n          div(tableOutput(\"head\"), style = \"background-color:#303030; border-radius:5px\"),\n          div(\"*每人價格：\",span(\"『為該方案之每人價格』\",style = \"color:\t#FF5D38\t\"),\"，含餐飲最低基本消費與10%總金額之服務費。\",style = \"color:#00DDFF\"),\n          div(\"*續唱價格(每小時)：每小時的續唱價格，若欲續唱需另加10%服務費。(1)若該欄位為「0」則可歡唱至打烊，且該列之歡唱時數為入場時段開始至打烊時間。\n              (2)若該欄位為「X」，則不開放續唱。(3)若該欄位為「C」，建議洽詢分店相關續唱事宜。\",style = \"color:#00DDFF\"),\n          div(\"*此表僅供參考，詳細方案與最新資訊請洽各KTV。\",style = \"color:#00DDFF\")\n         )\n      )\n  ))\n  ),\n  tabPanel(\"KTV Info\",\n           fluidPage(\n             titlePanel(\"KTV Info\"),\n             \n             sidebarPanel(\n               selectInput(\"KTV\", \n                           label = \"KTV店家\",\n                           choices = c(\"全部\"=1, \"好樂迪\"=2,\"錢櫃\"=3, \"星聚點\"=4),\n                           selected = 1),\n           img(src = \"https://weilunlo.github.io/KTVcaculator/testKTVcalculator/dog.png\", height = 300,width=250)\n             ),\n             mainPanel(\n               h2(\"店家基本資訊\",style = \"color:\t#0072E3\t\"),\n               h3(\"詳細地圖與資訊可參考\",\n                      a(\"本網站的地圖頁\", href = \"https://evanyo25.github.io/dPD_ktv/map.html\")),\n               div(tableOutput(\"info\"), style = \"background-color:#303030; border-radius:5px\")\n               )\n           )\n           )\n  ))",
+    "created" : 1483272685586.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2029043943",
+    "id" : "7DFECC22",
+    "lastKnownWriteTime" : 1484226316,
+    "last_content_update" : 1484226316538,
+    "path" : "C:/Users/acer/Desktop/KTVcaculator/testKTVcalculator/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

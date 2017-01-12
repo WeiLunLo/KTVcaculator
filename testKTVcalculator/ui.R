@@ -26,12 +26,12 @@ shinyUI(
       selectInput("start", 
                    label = "開始時間：", 
                    choices = c(0:23),
-                  selected = 0),
+                  selected = 13),
       
       selectInput("end", 
                    label = "結束時間：", 
                    choices = c(0:23),
-                   selected = 0),
+                   selected = 17),
       helpText("24小時制，若『開始時間大於等於結束時間』則跨過一天。例：0→0 = 今天半夜唱到明天半夜；
                23->2 = 今天晚上11點唱到明天凌晨2點",style = "color:	#02F78E	"),
   

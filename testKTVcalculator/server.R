@@ -232,7 +232,7 @@ shinyServer(
           if (temphead[i,1]=="好樂迪"){
             temphead[i,4] <- (temphead[i,4]*discounthld+100)*1.1
           } else if (temphead[i,1] == "錢櫃"){
-            temphead[i,4] <- (temphead[i,4]*discouncg+100)*1.1
+            temphead[i,4] <- (temphead[i,4]*discountcg+100)*1.1
           } else{
             temphead[i,4] <- (temphead[i,4]+100)*1.1
           }

@@ -3,8 +3,8 @@ title: KTVcalculator
 account: allenlo
 server: shinyapps.io
 appId: 148836
-bundleId: 677066
+bundleId: 677089
 url: https://allenlo.shinyapps.io/ktvcalculator/
-when: 1484224692.30695
+when: 1484226355.39959
 asMultiple: FALSE
 asStatic: FALSE
